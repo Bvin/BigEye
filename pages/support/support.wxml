@@ -1,0 +1,8 @@
+<!--pages/support/support.wxml-->
+<view style='margin:30rpx'>
+  <text style='font-size:14pt'>如果您有技术需求，可扫码添加微信进行联系，网站制作、App定制、小程序定制等等一应俱全。</text>
+  <image style='display:flex;justify-content: center;margin-top:80rpx'   src='http://p9qn6odtr.bkt.clouddn.com/me.jpg'
+  mode='aspectFit'></image>
+
+</view>
+

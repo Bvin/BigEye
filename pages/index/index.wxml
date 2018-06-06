@@ -1,13 +1,15 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='content'>
+  <text style='text'>我要看大图是一个具有查看高清原始大图能力的小程序，只需要提供原始图片的链接按照指定格式即可轻松实现。
+
+原始图片规格最高可支持20M大小，10000*10000的分辨率，百分百放大图片可清晰查看图片细节。对具有高清看图的需求的朋友可在您的公众号关联本小程序，并在您的文章插入小程序，路径填写bvin/bigeye/show/show?img=您的原始图片链接。</text>
+
+  <text style='font-style:italic;font-size:10pt;margin-top:10rpx'>
+提示：最好以图片的形式插入小程序，并且图片是您高清图的缩略图，这样可以达到比较无缝的看图体验。</text>
+  <view class='center-horizontal' bindtap='gotoSupport'>
+    <text class='semi-text'>——</text>
+    <text style='text-decoration:underline;margin-left:10rpx;margin-right:10rpx'>小程序技术支持,由bvin提供</text>
+    <text class='semi-text'>——</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
 </view>
