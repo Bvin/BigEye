@@ -12,8 +12,11 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../show/show?img=http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdb394cdf.jpg',
     })
+    /*wx.navigateTo({
+      url: '../logs/logs'
+    })*/
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -44,11 +47,14 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
+    /*console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })*/
+    wx.navigateTo({
+      url: '../show/show?img=https://mp.weixin.qq.com/wxopen/qrcode?action=download&fakeid=3853039357&token=1040002260&type=0&pixsize=224&line_r=undefined&line_g=undefined&line_b=undefined',
     })
   }
 })
