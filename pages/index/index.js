@@ -13,7 +13,31 @@ Page({
 
   gotoSupport: function(e){
     wx.navigateTo({
-      url: '../show/show',
+      url: '../support/support',
+    })
+  },
+
+  gotoUsage: function(e){
+    wx.navigateTo({
+      url: '../usage/usage',
+    })
+  },
+
+  gotoShow: function(e){
+    var imgUrl;
+    if (e.currentTarget.dataset.imgUrl){
+      imgUrl = '../show/show?img=' + e.currentTarget.dataset.imgUrl;
+    }else{
+      imgUrl = '../show/show'
+    }
+    wx.navigateTo({
+      url: imgUrl,
+    })
+  },
+
+  showImage: function (e) {
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.imgUrl],
     })
   },
 

@@ -4,15 +4,17 @@
 
 原始图片规格最高可支持20M大小，10000*10000的分辨率，百分百放大图片可清晰查看图片细节。对具有高清看图的需求的朋友可在您的公众号关联本小程序，并在您的文章插入小程序，路径填写bvin/bigeye/show/show?img=您的原始图片链接。</text>
 
+  <text style='margin-top:30rpx;text-decoration:underline' bindtap='gotoUsage'>详细教程，点我点我!</text>
+
   <text style='font-style:italic;font-size:10pt;margin-top:10rpx'>
 提示：最好以图片的形式插入小程序，并且图片是您高清图的缩略图，这样可以达到比较无缝的看图体验。</text>
 
   <view class='space-between-area'>
     <text style='color:#353535'>你可能看过</text>
-    <text style='color:#888888'>更多>></text>
+    <text style='color:#888888' bindtap='gotoShow'>更多>></text>
   </view>
   <scroll-view scroll-x style='width:100%; margin-top:30rpx;  white-space:nowrap' >
-     <image wx:for="{{images}}" src='{{item.imgUrl}}' style=' display:inline-block;width:300rpx;height:200rpx;margin-right:10rpx'></image>
+     <image wx:for="{{images}}" src='{{item.imgUrl}}' style=' display:inline-block;width:300rpx;height:200rpx;margin-right:10rpx' data-img-url='{{item.imgUrl}}' bindtap='gotoShow'></image>
   </scroll-view>
 
    

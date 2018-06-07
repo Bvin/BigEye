@@ -24,6 +24,13 @@ Page({
         }
       })
     }
+    this.setData({ images: [{ imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdcce1235.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdb394cdf.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bd9b44a86.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2018-05-29/5b0d2c54b4215.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2018-05-29/5b0d2c8926fc8.jpg" }] })
+  },
+
+  showImage: function(e){
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.imgUrl],
+    })
   },
 
   /**

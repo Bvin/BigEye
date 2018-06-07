@@ -1,2 +1,4 @@
 <!--pages/show/show.wxml-->
-<text>pages/show/show.wxml</text>
+  <scroll-view scroll-x style='width:100%; margin-top:30rpx;'>
+     <image wx:for="{{images}}" src='{{item.imgUrl}}' style='width:350rpx;height:350rpx;margin-left:15rpx' bindtap='showImage' data-images="{{images}}" data-img-url="{{item.imgUrl}}"></image>
+  </scroll-view>
