@@ -40,8 +40,9 @@ Page({
     console.log('onShow');
     wx.getStorageInfo({
       success: function(res) {
-        console.log(res.keys)
-        
+        for (let i = 0; i <= res.keys.length; i++){
+          console.log(res.keys[i])
+        }
       },
     })
   },

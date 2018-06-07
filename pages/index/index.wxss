@@ -13,3 +13,10 @@
   margin-top: 100rpx;
   color: #888888;
 }
+
+.space-between-area{
+  font-size:11pt;
+  display: flex;
+  margin-top: 80rpx;
+  justify-content: space-between;
+}

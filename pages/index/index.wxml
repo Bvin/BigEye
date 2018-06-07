@@ -6,6 +6,17 @@
 
   <text style='font-style:italic;font-size:10pt;margin-top:10rpx'>
 提示：最好以图片的形式插入小程序，并且图片是您高清图的缩略图，这样可以达到比较无缝的看图体验。</text>
+
+  <view class='space-between-area'>
+    <text style='color:#353535'>你可能看过</text>
+    <text style='color:#888888'>更多>></text>
+  </view>
+  <scroll-view scroll-x style='width:100%; margin-top:30rpx;  white-space:nowrap' >
+     <image wx:for="{{images}}" src='{{item.imgUrl}}' style=' display:inline-block;width:300rpx;height:200rpx;margin-right:10rpx'></image>
+  </scroll-view>
+
+   
+
   <view class='center-horizontal' bindtap='gotoSupport'>
     <text class='semi-text'>——</text>
     <text style='text-decoration:underline;margin-left:10rpx;margin-right:10rpx'>小程序技术支持,由bvin提供</text>

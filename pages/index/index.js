@@ -4,10 +4,11 @@ const app = getApp()
 
 Page({
   data: {
+    images:[{imgUrl:''}]
   },
   
   onLoad: function () {
-    
+    this.setData({ images: [{ imgUrl: 'http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdcce1235.jpg' }, { imgUrl: 'http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdb394cdf.jpg' }, { imgUrl:'http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bd9b44a86.jpg'}]})
   },
 
   gotoSupport: function(e){
