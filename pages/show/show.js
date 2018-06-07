@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     var imgUrl = options.img;
     if(imgUrl){
       wx.previewImage({
@@ -24,7 +25,20 @@ Page({
         }
       })
     }
-    this.setData({ images: [{ imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdcce1235.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdb394cdf.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bd9b44a86.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2018-05-29/5b0d2c54b4215.jpg" }, { imgUrl: "http://www.gzsghj.gov.cn/Uploads/Editor/2018-05-29/5b0d2c8926fc8.jpg" }] })
+    wx.getStorageInfo({
+      success: function(res) {
+        var histiryImages = [];
+        for (var i = 0; i <= res.keys.length; i++) {
+          var key = res.keys[i];
+          if (!key) continue;
+          var img = {};
+          img.imgUrl = res.keys[i];
+          histiryImages.push(img);
+        }
+        _this.setData({ images: histiryImages })
+      },
+    })
+    
   },
 
   showImage: function(e){
@@ -44,14 +58,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('onShow');
-    wx.getStorageInfo({
-      success: function(res) {
-        for (let i = 0; i <= res.keys.length; i++){
-          console.log(res.keys[i])
-        }
-      },
-    })
   },
 
   /**

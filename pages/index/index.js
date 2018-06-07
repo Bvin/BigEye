@@ -4,11 +4,29 @@ const app = getApp()
 
 Page({
   data: {
-    images:[{imgUrl:''}]
+    images: [{ imgUrl:""}]
   },
   
   onLoad: function () {
-    this.setData({ images: [{ imgUrl: 'http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdcce1235.jpg' }, { imgUrl: 'http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bdb394cdf.jpg' }, { imgUrl:'http://www.gzsghj.gov.cn/Uploads/Editor/2017-10-17/59e5bd9b44a86.jpg'}]})
+    var _this = this;
+    wx.getStorageInfo({
+      success: function(res) {
+        console.log(res)
+        _this.setData({ 
+          hasHistory: res.keys.length > 0}
+          )
+
+        var histiryImages = [];
+        for (var i = 0; i <= res.keys.length; i++){
+          var key = res.keys[i];
+          if (!key) continue;
+          var img = {};
+          img.imgUrl = res.keys[i];
+          histiryImages.push(img);
+        }
+        _this.setData({ images: histiryImages})
+      },
+    })
   },
 
   gotoSupport: function(e){
@@ -41,9 +59,4 @@ Page({
     })
   },
 
-  getUserInfo: function(e) {
-    wx.navigateTo({
-      url: '../show/show?img=https://mp.weixin.qq.com/wxopen/qrcode?action=download&fakeid=3853039357&token=1040002260&type=0&pixsize=224&line_r=undefined&line_g=undefined&line_b=undefined',
-    })
-  }
 })
